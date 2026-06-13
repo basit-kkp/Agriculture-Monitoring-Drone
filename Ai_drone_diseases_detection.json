@@ -1,0 +1,53 @@
+{
+  "system_name": "Agricultural Monitoring Drone for Crop Disease Detection",
+  "peas": {
+    "performance_measures": [
+      "Accuracy of Disease Detection",
+      "Coverage Efficiency", 
+      "Timeliness of Alerts",
+      "Resource Optimization",
+      "Reduction in Crop Loss"
+    ],
+    "environment": "Open agricultural fields and plantations with variable weather conditions like wind, rain, sunlight, and temperature changes. Presence of obstacles such as trees, poles, irrigation systems, different crop types, and seasonal variations affecting plant health.",
+    "actuators": [
+      "Propellers and Motors",
+      "Spraying Mechanism",
+      "Communication System",
+      "Navigation Controls"
+    ],
+    "sensors": [
+      "High-resolution RGB Cameras",
+      "Infrared IR Sensors",
+      "GPS Module",
+      "Environmental Sensors",
+      "Obstacle Detection Sensors"
+    ]
+  },
+  "environment_classification": {
+    "observability": {
+      "choice": "Partially Observable",
+      "justification": "Drone cannot capture every detail of field at once and some diseases are not immediately visible"
+    },
+    "agents": {
+      "choice": "Single-agent",
+      "justification": "Drone works independently without direct competition or cooperation with other agents"
+    },
+    "determinism": {
+      "choice": "Stochastic",
+      "justification": "Outcomes are uncertain due to weather changes, lighting conditions, and unpredictable disease spread"
+    },
+    "episodicity": {
+      "choice": "Sequential",
+      "justification": "Each action like scanning one area affects future decisions such as where to scan next"
+    },
+    "dynamics": {
+      "choice": "Dynamic",
+      "justification": "Conditions change continuously like weather shifts and crop health deterioration over time"
+    },
+    "discreteness": {
+      "choice": "Continuous",
+      "justification": "Variables like movement, time, and sensor data are constantly changing and not discrete"
+    }
+  },
+  "utility_function": "U = 0.7*accuracy_of_detection + 0.3*coverage_speed"
+}
